@@ -1,25 +1,20 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-# abort on errors
 set -e
 
-# build
+# Build the project
 npm run build
 
-# navigate into the build output directory
+# Navigate into the build output directory
 cd dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
+# Initialize a new git repository
 git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
+# Push to the gh-pages branch
+git push -f git@github.com:Bryan974p/site_cf_saint_denis.git main:gh-pages
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:<Bryan974p>/site_cf_saint_denis.git main:gh-pages
-
+# Return to the project root
 cd -
